@@ -1,8 +1,17 @@
-/* Header */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+
 body {
     background-image: url(../img/fondo.jpg);
     background-size: cover;
 }
+
+/* Header */
 header {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -93,7 +102,7 @@ header {
 }
 
 /*Footer*/
-.footer-copyright a{
+.footer-copyright {
   text-decoration: none;
   font-size: 1.2 rem;
   color: white;

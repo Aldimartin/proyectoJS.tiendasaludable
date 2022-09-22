@@ -79,6 +79,9 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage, itemGrams) {
     .addEventListener('change', quantityChanged);
 
   updateShoppingCartTotal();
+
+  guardarDatos ("listaCompra", JSON.stringify(shoppingCartContent));
+  /*funcion de guardar datos en el local*/
 }
 function updateShoppingCartTotal() {
   let total = 0;
@@ -100,6 +103,9 @@ function updateShoppingCartTotal() {
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
   });
   shoppingCartTotal.innerHTML = `${total}$`;
+
+  guardarDatos ("listaCompra", JSON.stringify(shoppingCartContent));
+  /*la llamo nuevamente para q se actualice el carrito si eliminan y refreszcan*/
 }
 function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
